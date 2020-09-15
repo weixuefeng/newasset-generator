@@ -19,5 +19,5 @@ module.exports = {
       },
     ],
   ],
-  defaultNetwork: 'mainnet',
+  defaultNetwork: 'NewChainTestNet',
 };

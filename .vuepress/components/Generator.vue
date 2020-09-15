@@ -30,7 +30,7 @@
             <b-col lg="10" offset-lg="1" class="mb-3 p-0">
                 <b-card v-if="!loading" bg-variant="transparent" border-variant="0">
                     <b-alert show variant="primary">
-                        NOTE: to use this app we suggest to install <a href="https://metamask.io/" target="_blank">MetaMask</a> extension on Chrome Desktop.
+                        NOTE: to use this app we suggest to install <a href="https://metamask.io/" target="_blank">NewMask</a> extension on Chrome Desktop.
                         Use any other wallet at your own risk.
                     </b-alert>
 
@@ -207,12 +207,10 @@
                                                     </b-form-select>
                                                 </b-form-group>
 
-                                                <b-alert show variant="warning" v-if="currentNetwork !== 'mainnet'">
+                                                <b-alert show variant="warning" v-if="currentNetwork !== 'NewChainMainNet'">
                                                     <strong>
                                                         You selected a TEST Network.
                                                     </strong>
-                                                    <hr>
-                                                    To deploy on Main Network you must select Main Ethereum Network.
                                                 </b-alert>
                                             </b-col>
                                         </b-row>
