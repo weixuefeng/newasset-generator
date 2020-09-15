@@ -1,5 +1,6 @@
 module.exports = {
   description: 'Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable ERC20 Token.',
+  title: 'Newton Token Generator | Create your Token for FREE',
   base: '/erc20-generator/',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
