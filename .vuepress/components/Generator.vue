@@ -2,7 +2,7 @@
     <div>
         <b-jumbotron bg-variant="dark"
                      text-variant="white"
-                     header="ERC20 Token Generator"
+                     header="Newton Token Generator"
                      lead="Create your Token for FREE"
                      class="mb-0"
                      fluid>
@@ -355,7 +355,7 @@
             if (!this.metamask.installed) {
               this.makeToast(
                 'Warning',
-                'To create a Token please install MetaMask!',
+                'To create a Token please install NewMask!',
                 'danger',
               );
               return;
@@ -363,7 +363,7 @@
               if (this.metamask.netId !== this.network.current.id) {
                 this.makeToast(
                   'Warning',
-                  `Your MetaMask in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
+                  `Your NewMask in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
                   'warning',
                 );
                 return;
