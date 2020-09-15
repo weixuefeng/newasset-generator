@@ -12,8 +12,8 @@
             <ul class="list-inline mt-2">
                 <li class="list-inline-item">
                     <small>created by
-                        <b-link class="text-dark" href="https://vittominacori.github.io/" target="_blank">
-                            @vittominacori
+                        <b-link class="text-dark" href="https://github.com/newswap/erc20-generator" target="_blank">
+                            @newswap
                         </b-link>
                     </small>
                 </li>
