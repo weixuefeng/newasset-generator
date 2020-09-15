@@ -3,7 +3,7 @@
 
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-        <b-navbar-brand to="/">ERC20 Token Generator</b-navbar-brand>
+        <b-navbar-brand to="/">Newton Token Generator</b-navbar-brand>
 
         <b-collapse is-nav id="nav_collapse">
             <b-navbar-nav>
