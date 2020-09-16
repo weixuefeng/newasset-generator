@@ -1,18 +1,18 @@
 ---
 component: Home
-title: Newton Token Generator | Create your Token for FREE
+title: NewAsset Generator | Create your Token for FREE
 ---
 
-# ERC20 Token Generator - DAPP
+# NewAsset Generator - DAPP
 
-Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable ERC20 Token.
+Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable NewAsset Token.
 
 
 Code created using [VuePress](https://vuepress.vuejs.org/).
 
 ## Smart Contracts Source
  
-Discover Smart Contracts source [here](https://github.com/vittominacori/erc20-generator).
+Discover Smart Contracts source [here](https://github.com/newswap/newasset-generator).
 
 ## Install dependencies
 
@@ -40,4 +40,4 @@ npm run deploy
 
 ## License
 
-Code released under the [MIT License](https://github.com/vittominacori/erc20-generator/blob/master/LICENSE).
+Code released under the [MIT License](https://github.com/newswap/newasset-generator/blob/master/LICENSE).
