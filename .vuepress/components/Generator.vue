@@ -2,35 +2,35 @@
     <div>
         <b-jumbotron bg-variant="dark"
                      text-variant="white"
-                     header="Newton Token Generator"
+                     header="NewAsset Generator"
                      lead="Create your Token for FREE"
                      class="mb-0"
                      fluid>
-            <p>
-                <b-img src="https://img.shields.io/badge/version-3.0.4-blue"></b-img>
-                <b-link href="https://travis-ci.org/github/vittominacori/erc20-generator" target="_blank">
-                    <b-img src="https://travis-ci.org/vittominacori/erc20-generator.svg?branch=master"></b-img>
-                </b-link>
-                <b-link href="https://coveralls.io/github/vittominacori/erc20-generator" target="_blank">
-                    <b-img src="https://coveralls.io/repos/github/vittominacori/erc20-generator/badge.svg?branch=master"></b-img>
-                </b-link>
-            </p>
-            <p>Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable ERC20 Token.</p>
+<!--            <p>-->
+<!--                <b-img src="https://img.shields.io/badge/version-3.0.4-blue"></b-img>-->
+<!--                <b-link href="https://travis-ci.org/github/vittominacori/erc20-generator" target="_blank">-->
+<!--                    <b-img src="https://travis-ci.org/vittominacori/erc20-generator.svg?branch=master"></b-img>-->
+<!--                </b-link>-->
+<!--                <b-link href="https://coveralls.io/github/vittominacori/erc20-generator" target="_blank">-->
+<!--                    <b-img src="https://coveralls.io/repos/github/vittominacori/erc20-generator/badge.svg?branch=master"></b-img>-->
+<!--                </b-link>-->
+<!--            </p>-->
+            <p>Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable NewAsset Token.</p>
             <hr class="my-4">
             <a class="btn btn-lg btn-outline-warning"
                href="#token-generator"
                v-smooth-scroll="{ duration: 1000, offset: -50, updateHistory: false }">
                 Create a Token
             </a>
-            <b-button to="/docs.html" size="lg" variant="light">
-                Documentation
-            </b-button>
+<!--            <b-button to="/docs.html" size="lg" variant="light">-->
+<!--                Documentation-->
+<!--            </b-button>-->
         </b-jumbotron>
         <b-row>
             <b-col lg="10" offset-lg="1" class="mb-3 p-0">
                 <b-card v-if="!loading" bg-variant="transparent" border-variant="0">
                     <b-alert show variant="primary">
-                        NOTE: to use this app we suggest to install <a href="https://metamask.io/" target="_blank">NewMask</a> extension on Chrome Desktop.
+                        NOTE: to use this app we suggest to install <a href="https://www.newtonproject.org/newmask" target="_blank">NewMask</a> extension on Chrome Desktop.
                         Use any other wallet at your own risk.
                     </b-alert>
 
