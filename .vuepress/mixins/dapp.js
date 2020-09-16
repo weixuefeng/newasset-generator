@@ -64,7 +64,7 @@ export default {
               console.log(err); // eslint-disable-line no-console
             }
             this.metamask.netId = netId;
-            if (netId !== this.network.list[network].id) {
+            if (parseInt(netId) !== parseInt(this.network.list[network].id)) {
               this.network.current = this.network.list[this.network.map[netId]];
               await this.initWeb3(network, false);
             }

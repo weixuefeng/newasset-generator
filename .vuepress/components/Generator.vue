@@ -360,7 +360,7 @@
               );
               return;
             } else {
-              if (this.metamask.netId !== this.network.current.id) {
+              if (parseInt(this.metamask.netId) !== parseInt(this.network.current.id)) {
                 this.makeToast(
                   'Warning',
                   `Your NewMask in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
