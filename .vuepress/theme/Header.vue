@@ -1,11 +1,11 @@
 <template>
     <b-navbar toggleable="md" type="dark" variant="dark">
 
-        <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+        <!-- <b-navbar-toggle target="nav_collapse"></b-navbar-toggle> -->
 
         <b-navbar-brand to="/">NewAsset Generator</b-navbar-brand>
 
-        <b-collapse is-nav id="nav_collapse">
+        <!-- <b-collapse is-nav id="nav_collapse"> -->
 <!--            <b-navbar-nav>-->
 <!--                <b-nav-item to="/docs.html">Docs</b-nav-item>-->
 <!--                <b-nav-item target="_blank"-->
@@ -29,7 +29,7 @@
 <!--                </b-nav-item-dropdown>-->
 <!--            </b-navbar-nav>-->
 
-        </b-collapse>
+        <!-- </b-collapse> -->
     </b-navbar>
 </template>
 
