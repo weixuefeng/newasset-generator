@@ -3,7 +3,7 @@
         <b-jumbotron bg-variant="dark"
                      text-variant="white"
                      header="NewAsset Generator"
-                     lead="Create your Token for FREE"
+                     lead="Create your Token for FREE | 免费发行通证"
                      class="mb-0"
                      fluid>
 <!--            <p>-->
@@ -16,11 +16,12 @@
 <!--                </b-link>-->
 <!--            </p>-->
             <p>Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable NewAsset Token.</p>
+            <p>轻松部署标准的、可增发和销毁、可以设置封顶额度的NewAsset通证</p>
             <hr class="my-4">
             <a class="btn btn-lg btn-outline-warning"
                href="#token-generator"
                v-smooth-scroll="{ duration: 1000, offset: -50, updateHistory: false }">
-                Create a Token
+                Create a Token | 创建通证
             </a>
 <!--            <b-button to="/docs.html" size="lg" variant="light">-->
 <!--                Documentation-->
@@ -30,24 +31,25 @@
             <b-col lg="10" offset-lg="1" class="mb-3 p-0">
                 <b-card v-if="!loading" bg-variant="transparent" border-variant="0">
                     <b-alert show variant="primary">
-                        NOTE: to use this app we suggest to install <a href="https://www.newtonproject.org/newmask" target="_blank">NewMask</a> extension on Chrome Desktop.
-                        Use any other wallet at your own risk.
+                        NOTE: to use this app we suggest to install <a href="https://addons.mozilla.org/firefox/addon/newmask/" target="_blank">NewMask</a> extension on Firefox.
+                      Use any other wallet at your own risk. <br />
+                        提示：建议安装Firefox浏览器和<a href="https://addons.mozilla.org/firefox/addon/newmask/" target="_blank">NewMask</a>插件钱包来使用此App发行Token。
                     </b-alert>
 
-                    <b-card header="Making transaction..."
+                    <b-card header="Making transaction... | 正在发起交易"
                             header-bg-variant="info"
                             header-text-variant="white"
                             v-if="makingTransaction || transactionStarted"
                             class="mt-3">
-                        <div v-if="!trxHash">Please wait...</div>
+                        <div v-if="!trxHash">Please wait... | 请稍等 </div>
                         <div v-else>
-                            <b>Well! Transaction done!</b><br>
-                            Transaction id <a :href="trxLink" target="_blank"><span v-html="trxHash"></span></a><br>
+                            <b>Well! Transaction done! | 交易执行完毕</b><br>
+                            Transaction id | 交易ID <a :href="trxLink" target="_blank"><span v-html="trxHash"></span></a><br>
 
-                            Retrieving Token.
+                            Retrieving Token. | 正在获取通证地址。
                             <div v-if="!token.address">Please wait...</div>
                             <div v-else>
-                                <b>Your Token</b>
+                                <b>Your Token | 您的通证地址 </b>
                                 <b-link :href="token.link" target="_blank"><span v-html="token.address"></span></b-link>
                             </div>
                         </div>
@@ -62,7 +64,7 @@
                         <fieldset :disabled="formDisabled">
                             <b-row>
                                 <b-col lg="4">
-                                    <b-card header="Token Details"
+                                    <b-card header="Token Details | 通证详情"
                                             header-bg-variant="dark"
                                             header-text-variant="white"
                                             class="mt-3">
@@ -71,13 +73,13 @@
                                                 :rules="{ required: true }"
                                                 v-slot="{ errors }">
                                             <b-form-group
-                                                    description="Choose a name for your token."
-                                                    label="Token name *"
+                                                    description="Choose a name for your token. | 为您的通证选一个名字。"
+                                                    label="Token name * | 通证名称"
                                                     label-for="tokenName">
                                                 <b-form-input
                                                         id="tokenName"
                                                         name="tokenName"
-                                                        placeholder="Your token name"
+                                                        placeholder=""
                                                         v-model.trim="token.name"
                                                         size="lg"
                                                         :class="{'is-invalid': errors.length > 0}"
@@ -94,13 +96,13 @@
                                                 :rules="{ required: true }"
                                                 v-slot="{ errors }">
                                             <b-form-group
-                                                    description="Choose a symbol for your token (usually 3-5 chars)."
-                                                    label="Token symbol *"
+                                                    description="Choose a symbol for your token (usually 3-5 chars). | 通证符号一般是3-5个英文字符。"
+                                                    label="Token symbol * | 通证符号"
                                                     label-for="tokenSymbol">
                                                 <b-form-input
                                                         id="tokenSymbol"
                                                         name="tokenSymbol"
-                                                        placeholder="Your token symbol"
+                                                        placeholder=""
                                                         v-model.trim="token.symbol"
                                                         size="lg"
                                                         :class="{'is-invalid': errors.length > 0}"
@@ -117,8 +119,8 @@
                                                 :rules="{ required: true, numeric: true, min_value: 0, max_value: 36 }"
                                                 v-slot="{ errors }">
                                             <b-form-group
-                                                    description="Insert the decimal precision of your token. If you don't know what to insert, use 18."
-                                                    label="Token decimals *"
+                                                    description="Insert the decimal precision of your token. If you don't know what to insert, use 18. | 如果没有特殊需求，就可以写18。"
+                                                    label="Token decimals * | 通证小数位数"
                                                     label-for="tokenDecimals">
                                                 <b-form-input
                                                         id="tokenDecimals"
@@ -141,13 +143,13 @@
                                                 :rules="{ required: true, numeric: true, min_value: 1, max_value: 1000000000000000 }"
                                                 v-slot="{ errors }">
                                             <b-form-group
-                                                    description="Insert the maximum number of tokens available."
-                                                    label="Total supply *"
+                                                    description="Insert the maximum number of tokens available. | 填写通证的最大发行数量。"
+                                                    label="Total supply * | 总发行量"
                                                     label-for="tokenCap">
                                                 <b-form-input
                                                         id="tokenCap"
                                                         name="tokenCap"
-                                                        placeholder="Your token max supply"
+                                                        placeholder=""
                                                         type="number"
                                                         v-model.trim="token.cap"
                                                         size="lg"
@@ -166,13 +168,13 @@
                                                 :rules="{ required: true, numeric: true, min_value: 0, max_value: token.cap || 0 }"
                                                 v-slot="{ errors }">
                                             <b-form-group
-                                                    description="Insert the initial number of tokens available. Will be put in your account."
-                                                    label="Initial supply *"
+                                                    description="Insert the initial number of tokens available. Will be put in your account. | 填写通证的初始发行量，这些Token会放到当前钱包账户。"
+                                                    label="Initial supply * | 初始发行量"
                                                     label-for="tokenInitialBalance">
                                                 <b-form-input
                                                         id="tokenInitialBalance"
                                                         name="tokenInitialBalance"
-                                                        placeholder="Your token initial supply"
+                                                        placeholder=""
                                                         type="number"
                                                         :disabled="finishMinting"
                                                         v-model.trim="token.initialBalance"
@@ -188,15 +190,15 @@
                                     </b-card>
                                 </b-col>
                                 <b-col lg="8">
-                                    <b-card header="Advanced"
+                                    <b-card header="Advanced | 高级选项"
                                             header-bg-variant="dark"
                                             header-text-variant="white"
                                             class="mt-3">
                                         <b-row>
                                             <b-col lg="12">
                                                 <b-form-group
-                                                        description="Choose your Network."
-                                                        label="Network *"
+                                                        description="Choose your Network. | 选择发行通证的网络"
+                                                        label="Network * | 网络"
                                                         label-for="network">
                                                     <b-form-select id="network"
                                                                    v-model="currentNetwork"
@@ -209,7 +211,7 @@
 
                                                 <b-alert show variant="warning" v-if="currentNetwork !== 'NewChainMainNet'">
                                                     <strong>
-                                                        You selected a TEST Network.
+                                                        You selected a TEST Network. | 您选择了测试网。
                                                     </strong>
                                                 </b-alert>
                                             </b-col>
@@ -217,19 +219,20 @@
                                         <b-row>
                                             <b-col lg="12">
                                                 <b-form-group
-                                                        description="Choose to enable transfer during deploy or enable manually later."
+                                                        description="Choose to enable transfer during deploy or enable manually later. | 您可以选择在部署时就开启转账功能，或者稍后手工开启。"
                                                         label-for="enableTransfer">
                                                     <b-form-checkbox v-model="enableTransfer"
                                                                      size="lg"
                                                                      switch>
-                                                        Enable transfer
+                                                        Enable transfer | 开启转账功能
                                                     </b-form-checkbox>
                                                 </b-form-group>
 
                                                 <b-alert show variant="warning" v-if="!enableTransfer">
                                                     <strong>
                                                         Tokens won't be transferable until you call the
-                                                        <i>enableTransfer</i> function.
+                                                        <i>enableTransfer</i> function. <br />
+                                                        只有您手工调用<i>enableTransfer</i>方法，通证才可以转账交易。
                                                     </strong>
                                                     <hr>
                                                     Only people (or smart contracts) with <i>OPERATOR</i> role will be
@@ -238,47 +241,59 @@
                                                     tokens also when transfer is not enabled.<br>
                                                     You can also add or remove the OPERATOR role to addresses.<br>
                                                     This is because, by business choices, you may decide not to enable
-                                                    transfer until a specific time.
+                                                    transfer until a specific time.<br>
+                                                    只有具有<i>OPERATOR</i>角色的人能够转账。<br>
+                                                    此合约的创建者默认具有<i>OPERATOR</i>角色，所以他可以进行转账。<br>
+                                                    您也可以对此合约增加或删除<i>OPERATOR</i>角色。<br>
+                                                    您可以根据商业策略，决定在特定时间之前关闭转账功能。<br>
                                                 </b-alert>
                                                 <b-alert show variant="info" v-if="enableTransfer">
                                                     <strong>
-                                                        Everyone will be able to transfer tokens after deploy.
+                                                        Everyone will be able to transfer tokens after deploy. <br/>
+                                                        在发行完毕后，任何人都可以进行转账。
                                                     </strong>
                                                     <hr>
                                                     If you decide not to enable transfer until a specific time,
                                                     disable this option and call the
-                                                    <i>enableTransfer</i> function manually later.
+                                                    <i>enableTransfer</i> function manually later. <br/>
+                                                    如果您决定在特定的时间之前关闭转账，则可以关闭此选项，并在将来手工调用<i>enableTransfer</i>方法。
                                                 </b-alert>
                                             </b-col>
                                         </b-row>
                                         <b-row>
                                             <b-col lg="12">
                                                 <b-form-group
-                                                        description="Choose to disable minting during deploy or disable manually later."
+                                                        description="Choose to disable minting during deploy or disable manually later. | 选择现在关闭增发功能，或者将来手工关闭。"
                                                         label-for="finishMinting">
                                                     <b-form-checkbox v-model="finishMinting"
                                                                      size="lg"
                                                                      v-on:input="updateInitialBalance"
                                                                      switch>
-                                                        Disable minting
+                                                        Disable minting | 关闭增发功能
                                                     </b-form-checkbox>
                                                 </b-form-group>
 
                                                 <b-alert show variant="warning" v-if="finishMinting">
                                                     <strong>
-                                                        You won't be able to generate other tokens.
+                                                        You won't be able to generate other tokens.<br/>
+                                                        您将无法对此Token进行增发。
                                                     </strong>
                                                     <hr>
-                                                    Your initial supply will be equal to total supply.
+                                                    Your initial supply will be equal to total supply.<br/>
+                                                    您的初始发行量会等于总发行量。
                                                 </b-alert>
                                                 <b-alert show variant="info" v-if="!finishMinting">
                                                     <strong>
-                                                        You will be able to generate tokens up to your total supply.
+                                                        You will be able to generate tokens up to your total supply.<br/>
+                                                        您可以增发Token，直到达到最大发行量。
                                                     </strong>
                                                     <hr>
                                                     You can add or remove the MINTER role to addresses.<br>
                                                     When you decide to disable minting you must call the
-                                                    <i>finishMinting</i> function manually.
+                                                    <i>finishMinting</i> function manually. <p/>
+
+                                                    您可以为当前Token增加或者删除MINTER角色。<br/>
+                                                    当您决定取消增发功能时，您必须手工调用<i>finishMinting</i>方法。<p/>
                                                 </b-alert>
                                             </b-col>
                                         </b-row>
@@ -286,7 +301,7 @@
 
                                     <b-row class="mt-3">
                                         <b-col lg="12" class="text-right">
-                                            <b-button variant="warning" size="lg" type="submit">Create Token</b-button>
+                                            <b-button variant="warning" size="lg" type="submit">Create Token | 创建通证</b-button>
                                         </b-col>
                                     </b-row>
                                 </b-col>
@@ -355,7 +370,7 @@
             if (!this.metamask.installed) {
               this.makeToast(
                 'Warning',
-                'To create a Token please install NewMask!',
+                'To create a Token please install NewMask! | 您必须安装NewMask！',
                 'danger',
               );
               return;
@@ -363,7 +378,7 @@
               if (parseInt(this.metamask.netId) !== parseInt(this.network.current.id)) {
                 this.makeToast(
                   'Warning',
-                  `Your NewMask in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
+                  `Your NewMask in on the wrong network. Please switch on ${this.network.current.name} and try again! | 您的NewMask处于错误的网络，请切换到${this.network.current.name}并重试。`,
                   'warning',
                 );
                 return;
@@ -422,9 +437,9 @@
                         this.token.link = this.network.current.etherscanLink + '/token/' + this.token.address;
                         this.$forceUpdate();
                         this.makeToast(
-                          'Well done!',
-                          `Your token has been deployed at ${this.token.address}`,
-                          'success',
+                          'Well done! | 太好了！',
+                          `Your token has been deployed at | 您的通证部署在 ${this.token.address}`,
+                          'success | 成功',
                         );
                       }
                     }
