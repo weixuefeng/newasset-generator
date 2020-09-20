@@ -3,7 +3,7 @@
         <b-jumbotron bg-variant="dark"
                      text-variant="white"
                      header="NewAsset Generator"
-                     lead="Create your Token for FREE | 免费发行通证"
+                     lead="Create your Token for FREE | 自由的发行通证"
                      class="mb-0"
                      fluid>
 <!--            <p>-->
