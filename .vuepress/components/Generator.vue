@@ -441,14 +441,16 @@
                                 if(interval) {
                                   clearInterval(interval);
                                 }
-                                that.token.address = receipt.contractAddress;
-                                that.token.link = that.network.current.etherscanLink + '/token/' + that.token.address;
-                                that.$forceUpdate();
-                                that.makeToast(
-                                    'Well done! | 太好了！',
-                                    `Your tasdoken has been deployed at | 您的通证部署在 ${that.token.address}`,
-                                    'success | 成功',
-                                );
+                                if(!that.token.address) {
+                                  that.token.address = receipt.contractAddress;
+                                  that.token.link = that.network.current.etherscanLink + '/token/' + that.token.address;
+                                  that.$forceUpdate();
+                                  that.makeToast(
+                                      'Well done! | 太好了！',
+                                      `Your tasdoken has been deployed at | 您的通证部署在 ${that.token.address}`,
+                                      'success | 成功',
+                                  );
+                                }
                               }
                             });
                           }
