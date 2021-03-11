@@ -17,12 +17,12 @@ export default {
         map: {
           1007: 'NewChainTestNet',
           1012: 'NewChainMainNet',
-          1102: "NewChainDevNet"
+          1002: "NewChainDevNet"
         },
         list: {
           NewChainTestNet: {
-            web3Provider: 'https://rpc6.newchain.cloud.diynova.com',
-            etherscanLink: 'https://explorer.testnet.newtonproject.org',
+            web3Provider: 'https://rpc1.newchain.newtonproject.org/new2021',
+            etherscanLink: 'http://explorer.newb.club',
             id: '1007',
             name: 'NewChainTestNet',
           },
