@@ -17,6 +17,7 @@ export default {
         map: {
           1007: 'NewChainTestNet',
           1012: 'NewChainMainNet',
+          1102: "NewChainDevNet"
         },
         list: {
           NewChainTestNet: {
@@ -30,6 +31,12 @@ export default {
             etherscanLink: 'https://explorer.newtonproject.org',
             id: '1012',
             name: 'NewChainMainNet',
+          },
+          NewChainDevNet: {
+            web3Provider: 'https://devnet.newchain.cloud.diynova.com',
+            etherscanLink: 'http://explorer.newtonproject.dev.diynova.com/',
+            id: '1002',
+            name: 'NewChainDevNet',
           },
         },
       },
